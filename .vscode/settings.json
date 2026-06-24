@@ -1,7 +1,10 @@
 {
+  "editor.fontSize": 15,
+  "editor.tabSize": 2,
   "editor.defaultFormatter": "oxc.oxc-vscode",
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
     "source.format.oxc": "always"
-  }
+  },
+  "files.eol": "\n"
 }
