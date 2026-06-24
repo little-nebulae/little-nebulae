@@ -1,4 +1,5 @@
 {
+  "files.eol": "\n",
   "editor.fontSize": 15,
   "editor.tabSize": 2,
   "editor.defaultFormatter": "oxc.oxc-vscode",
@@ -6,5 +7,5 @@
   "editor.codeActionsOnSave": {
     "source.format.oxc": "always"
   },
-  "files.eol": "\n"
+  "oxc.fmt.configPath": ".oxfmtrc.json"
 }

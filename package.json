@@ -13,8 +13,8 @@
   },
   "type": "module",
   "scripts": {
-    "fmt": "oxfmt",
-    "fmt:check": "oxfmt --check"
+    "fmt": "oxfmt --disable-nested-config",
+    "fmt:check": "oxfmt --check --disable-nested-config"
   },
   "devDependencies": {
     "oxfmt": "0.55.0"
