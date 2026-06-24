@@ -8,6 +8,9 @@
         "oxfmt": "0.55.0",
       },
     },
+    "packages/typescript-config": {
+      "name": "@little-nebulae/typescript-config",
+    },
   },
   "catalog": {
     "@types/bun": "1.3.14",
@@ -15,6 +18,8 @@
     "typescript": "6.0.3",
   },
   "packages": {
+    "@little-nebulae/typescript-config": ["@little-nebulae/typescript-config@workspace:packages/typescript-config"],
+
     "@oxfmt/binding-android-arm-eabi": ["@oxfmt/binding-android-arm-eabi@0.55.0", "", { "os": "android", "cpu": "arm" }, "sha512-+rFDOqQe5LOWgxrAJaZgLRudr6GQm0wGI6gtu7vVkrdLGjNMUSGbAlaCr8j7F2H2Er97vYQCU8WDb30onqMM1g=="],
 
     "@oxfmt/binding-android-arm64": ["@oxfmt/binding-android-arm64@0.55.0", "", { "os": "android", "cpu": "arm64" }, "sha512-ctulLq8s3x8Zmvw6+iccB09TIKERAklRSmbJ10gk8mlAn05qZxoyo52dj3Hi9IJcmDSwF54fQaTVh2CbL6PInw=="],
