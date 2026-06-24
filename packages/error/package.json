@@ -1,0 +1,16 @@
+{
+  "name": "@little-nebulae/error",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "build": "tsdown",
+    "check-types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@little-nebulae/typescript-config": "workspace:*",
+    "@types/bun": "catalog:",
+    "@types/node": "catalog:",
+    "typescript": "catalog:"
+  }
+}
