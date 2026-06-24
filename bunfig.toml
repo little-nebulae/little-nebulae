@@ -1,0 +1,10 @@
+[console]
+depth = 5
+
+[install]
+exact = true
+ignoreScripts = true
+minimumReleaseAge = 259200 # in seconds, equal to 3 days
+
+[run]
+elide-lines = 0
