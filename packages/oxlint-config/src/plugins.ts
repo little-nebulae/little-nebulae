@@ -7,3 +7,5 @@ export const sharedPlugins: OxlintConfig["plugins"] = [
   "oxc",
   "import",
 ];
+
+export const webPlugins: OxlintConfig["plugins"] = [...sharedPlugins, "react"];
