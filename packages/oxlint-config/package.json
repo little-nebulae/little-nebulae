@@ -3,32 +3,7 @@
   "version": "0.0.0",
   "private": false,
   "type": "module",
-  "exports": {
-    ".": {
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.mts",
-      "default": "./dist/index.mjs"
-    },
-    "./*": {
-      "import": "./dist/*.mjs",
-      "types": "./dist/*.d.mts",
-      "default": "./dist/*.mjs"
-    }
-  },
-  "scripts": {
-    "build": "tsdown",
-    "lint": "oxlint --config=./oxlint.config.ts",
-    "lint:fix": "oxlint --fix --config=./oxlint.config.ts"
-  },
-  "dependencies": {
-    "oxlint": "catalog:",
-    "oxlint-tsgolint": "catalog:"
-  },
   "devDependencies": {
-    "@little-nebulae/typescript-config": "workspace:*",
-    "@types/bun": "catalog:",
-    "@types/node": "catalog:",
-    "tsdown": "catalog:",
-    "typescript": "catalog:"
+    "oxlint": "catalog:"
   }
 }
