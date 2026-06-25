@@ -12,12 +12,9 @@
       "name": "@little-nebulae/error",
       "version": "0.0.0",
       "devDependencies": {
-        "@little-nebulae/oxlint-config": "workspace:*",
         "@little-nebulae/typescript-config": "workspace:*",
         "@types/bun": "catalog:",
         "@types/node": "catalog:",
-        "oxlint": "catalog:",
-        "oxlint-tsgolint": "catalog:",
         "typescript": "catalog:",
       },
     },
