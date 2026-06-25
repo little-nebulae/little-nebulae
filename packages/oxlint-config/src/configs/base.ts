@@ -1,6 +1,10 @@
 import { defineConfig } from "oxlint";
 
 export const baseConfig = defineConfig({
+  options: {
+    typeAware: true,
+    typeCheck: true,
+  },
   plugins: ["eslint", "typescript", "unicorn", "oxc", "import"],
   rules: {
     // ESLint core rules
