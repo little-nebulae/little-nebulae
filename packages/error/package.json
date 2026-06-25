@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "tsdown",
-    "check-types": "tsc --noEmit",
-    "lint": "oxlint"
+    "lint": "oxlint --config=./oxlint.config.ts",
+    "lint:fix": "oxlint --fix --config=./oxlint.config.ts"
   },
   "devDependencies": {
     "@little-nebulae/oxlint-config": "workspace:*",

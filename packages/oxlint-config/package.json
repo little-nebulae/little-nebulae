@@ -17,9 +17,8 @@
   },
   "scripts": {
     "build": "tsdown",
-    "check-types": "tsc --noEmit",
-    "lint": "oxlint",
-    "lint:fix": "oxlint --fix"
+    "lint": "oxlint --config=./oxlint.config.ts",
+    "lint:fix": "oxlint --fix --config=./oxlint.config.ts"
   },
   "dependencies": {
     "oxlint": "catalog:",
