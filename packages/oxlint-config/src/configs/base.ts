@@ -1,6 +1,6 @@
 import { defineConfig } from "oxlint";
 
-import { sharedPlugins } from "@/plugins";
+import { sharedPlugins } from "@/options/plugins/native";
 
 export const baseConfig = defineConfig({
   plugins: sharedPlugins,
