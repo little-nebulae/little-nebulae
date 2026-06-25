@@ -7,6 +7,5 @@
   "editor.codeActionsOnSave": {
     "source.format.oxc": "always"
   },
-  "oxc.fmt.configPath": ".oxfmtrc.json",
-  "js/ts.experimental.useTsgo": true
+  "oxc.fmt.configPath": ".oxfmtrc.json"
 }
