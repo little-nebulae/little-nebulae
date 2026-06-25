@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "build": "tsdown",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix"
   },
   "dependencies": {
     "oxlint": "catalog:"
@@ -15,5 +17,8 @@
     "@types/bun": "catalog:",
     "@types/node": "catalog:",
     "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "oxlint-tsgolint": "0.23.0"
   }
 }
