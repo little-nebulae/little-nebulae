@@ -1,0 +1,19 @@
+{
+  "name": "@little-nebulae/oxlint-config",
+  "version": "0.0.0",
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "build": "tsdown",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "oxlint": "catalog:"
+  },
+  "devDependencies": {
+    "@little-nebulae/typescript-config": "workspace:*",
+    "@types/bun": "catalog:",
+    "@types/node": "catalog:",
+    "typescript": "catalog:"
+  }
+}
