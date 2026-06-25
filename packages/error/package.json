@@ -5,12 +5,16 @@
   "type": "module",
   "scripts": {
     "build": "tsdown",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "lint": "oxlint"
   },
   "devDependencies": {
+    "@little-nebulae/oxlint-config": "workspace:*",
     "@little-nebulae/typescript-config": "workspace:*",
     "@types/bun": "catalog:",
     "@types/node": "catalog:",
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:",
     "typescript": "catalog:"
   }
 }

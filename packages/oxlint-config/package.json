@@ -22,7 +22,8 @@
     "lint:fix": "oxlint --fix"
   },
   "dependencies": {
-    "oxlint": "catalog:"
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:"
   },
   "devDependencies": {
     "@little-nebulae/typescript-config": "workspace:*",
@@ -30,8 +31,5 @@
     "@types/node": "catalog:",
     "tsdown": "catalog:",
     "typescript": "catalog:"
-  },
-  "peerDependencies": {
-    "oxlint-tsgolint": "0.23.0"
   }
 }
