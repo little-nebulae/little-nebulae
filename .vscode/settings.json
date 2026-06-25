@@ -5,7 +5,9 @@
   "editor.defaultFormatter": "oxc.oxc-vscode",
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
+    "source.fixAll.oxc": "always",
     "source.format.oxc": "always"
   },
-  "oxc.fmt.configPath": ".oxfmtrc.json"
+  "oxc.fmt.configPath": ".oxfmtrc.json",
+  "oxc.fixKind": "safe_fix"
 }
