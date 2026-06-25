@@ -8,7 +8,15 @@ export const baseConfig = defineConfig({
   plugins: ["eslint", "typescript", "unicorn", "oxc", "import"],
   rules: {
     // ESLint core rules
+    "arrow-body-style": ["error", "as-needed"],
+    "capitalized-comments": "error",
     curly: "error",
+    "default-case": "error",
+    "default-case-last": "error",
+    "default-param-last": "error",
+    eqeqeq: "error",
+    "func-style": ["error", "declaration"],
+    "no-else-return": "error",
     // TypeScript rules
     "typescript/consistent-type-imports": "error",
     "typescript/no-import-type-side-effects": "error",
