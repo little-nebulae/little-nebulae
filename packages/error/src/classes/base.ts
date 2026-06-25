@@ -4,20 +4,18 @@ export class BaseError<TCode extends string, TCause = unknown> extends Error {
   declare cause: TCause;
 
   constructor({
-    name,
-    message,
     code,
+    message,
     retryable,
     cause,
   }: {
-    name: string;
-    message: string;
     code: TCode;
+    message: string;
     retryable: boolean;
     cause: TCause;
   }) {
     super(message, { cause });
-    this.name = name;
+    this.name = "BaseError";
     this.code = code;
     this.retryable = retryable;
   }

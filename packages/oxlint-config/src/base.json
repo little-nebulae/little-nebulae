@@ -1,0 +1,19 @@
+{
+  "$schema": "../node_modules/oxlint/configuration_schema.json",
+  "plugins": ["eslint", "import", "oxc", "typescript", "unicorn"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error",
+    "restriction": "error",
+    "pedantic": "error",
+    "style": "error",
+    "perf": "error"
+  },
+  "rules": {
+    "sort-keys": "off",
+    "import/no-named-export": "off",
+    "import/prefer-default-export": "off",
+    "typescript/explicit-member-accessibility": "off",
+    "typescript/prefer-readonly-parameter-types": "off"
+  }
+}
