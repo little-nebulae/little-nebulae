@@ -1,0 +1,15 @@
+{
+  "name": "@little-nebulae/tsdown-config",
+  "private": false,
+  "type": "module",
+  "devDependencies": {
+    "@little-nebulae/typescript-config": "workspace:*",
+    "@types/bun": "catalog:",
+    "@types/node": "catalog:",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "tsdown": "^0.22.0"
+  }
+}
