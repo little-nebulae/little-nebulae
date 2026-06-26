@@ -5,9 +5,8 @@
     "": {
       "name": "little-nebulae",
       "devDependencies": {
-        "@little-nebulae/oxlint-config": "workspace:*",
         "oxfmt": "0.55.0",
-        "oxlint": "catalog:",
+        "oxlint": "1.70.0",
         "oxlint-tsgolint": "0.23.0",
       },
     },
@@ -24,9 +23,6 @@
     "packages/oxlint-config": {
       "name": "@little-nebulae/oxlint-config",
       "version": "0.0.0",
-      "devDependencies": {
-        "oxlint": "catalog:",
-      },
     },
     "packages/typescript-config": {
       "name": "@little-nebulae/typescript-config",
@@ -35,7 +31,6 @@
   "catalog": {
     "@types/bun": "1.3.14",
     "@types/node": "26.0.0",
-    "oxlint": "1.70.0",
     "tsdown": "0.22.3",
     "typescript": "6.0.3",
   },

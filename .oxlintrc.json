@@ -4,5 +4,5 @@
     "typeAware": true,
     "typeCheck": true
   },
-  "extends": ["./node_modules/@little-nebulae/oxlint-config/src/base.json"]
+  "extends": ["./packages/oxlint-config/base.json"]
 }
