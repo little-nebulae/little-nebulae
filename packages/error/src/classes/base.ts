@@ -1,4 +1,6 @@
-export class BaseError<TCode extends string, TCause = unknown> extends Error {
+export abstract class BaseError<TCode extends string, TCause = unknown> extends Error {
+  // oxlint-disable-next-line unicorn/custom-error-definition
+  abstract override name: string;
   code: TCode;
   retryable: boolean;
   declare cause: TCause;
@@ -15,7 +17,6 @@ export class BaseError<TCode extends string, TCause = unknown> extends Error {
     cause: TCause;
   }) {
     super(message, { cause });
-    this.name = "BaseError";
     this.code = code;
     this.retryable = retryable;
   }

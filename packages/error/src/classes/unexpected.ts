@@ -1,6 +1,8 @@
 import { BaseError } from "@/classes/base";
 
 export class UnexpectedError extends BaseError<"UNEXPECTED_ERROR"> {
+  override name = "UnexpectedError";
+
   constructor({ action, cause }: { action: string; cause: unknown }) {
     super({
       code: "UNEXPECTED_ERROR",
@@ -8,6 +10,5 @@ export class UnexpectedError extends BaseError<"UNEXPECTED_ERROR"> {
       retryable: false,
       cause,
     });
-    this.name = "UnexpectedError";
   }
 }
