@@ -1,9 +1,5 @@
-export interface BaseError<T extends string> {
-  code: T;
-  message: string;
-  retryable: boolean;
-}
+import type { z } from "zod";
 
-export interface UnexpectedError extends BaseError<"UNEXPECTED_ERROR"> {
-  retryable: false;
-}
+import type { createErrorSchema } from "@/factories";
+
+export type ErrorType = z.infer<ReturnType<typeof createErrorSchema<string, boolean>>>;
