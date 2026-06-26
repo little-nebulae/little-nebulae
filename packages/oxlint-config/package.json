@@ -2,5 +2,11 @@
   "name": "@little-nebulae/oxlint-config",
   "version": "0.0.0",
   "private": false,
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "oxlint": "catalog:"
+  },
+  "peerDependencies": {
+    "oxlint": "^1.0.0"
+  }
 }

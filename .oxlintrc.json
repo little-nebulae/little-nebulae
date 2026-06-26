@@ -1,8 +1,8 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "extends": ["./packages/oxlint-config/base.json"],
   "options": {
     "typeAware": true,
     "typeCheck": true
-  },
-  "extends": ["./packages/oxlint-config/base.json"]
+  }
 }
