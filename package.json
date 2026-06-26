@@ -18,7 +18,9 @@
     "fmt": "oxfmt --disable-nested-config",
     "fmt:check": "oxfmt --check --disable-nested-config",
     "lint": "oxlint",
-    "lint:fix": "oxlint --fix"
+    "lint:fix": "oxlint --fix",
+    "check": "bun run lint && bun run fmt:check",
+    "fix": "bun run lint:fix && bun run fmt"
   },
   "devDependencies": {
     "oxfmt": "0.55.0",
