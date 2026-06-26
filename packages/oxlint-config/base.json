@@ -15,7 +15,7 @@
     "func-style": ["error", "declaration"],
     "no-ternary": "off",
     "sort-imports": "off",
-    "no-underscore-dangle": ["error", { "allow": ["__tags"] }],
+    "no-underscore-dangle": ["error", { "allow": ["__brand", "__tags"] }],
     "no-console": "off",
     "import/no-named-export": "off",
     "import/prefer-default-export": "off",
