@@ -18,6 +18,8 @@
     "import/prefer-default-export": "off",
     "import/group-exports": "off",
     "import/exports-last": "off",
+    "import/no-default-export": "off",
+    "oxc/no-rest-spread-properties": "off",
     "typescript/explicit-member-accessibility": "off",
     "typescript/prefer-readonly-parameter-types": "off",
     "typescript/explicit-function-return-type": "off",

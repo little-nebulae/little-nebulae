@@ -1,7 +1,15 @@
 {
   "name": "@little-nebulae/tsdown-config",
+  "version": "1.0.0",
   "private": false,
   "type": "module",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "bun run --bun tsdown"
+  },
   "devDependencies": {
     "@little-nebulae/typescript-config": "workspace:*",
     "@types/bun": "catalog:",
