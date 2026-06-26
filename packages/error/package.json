@@ -4,12 +4,14 @@
   "private": false,
   "type": "module",
   "scripts": {
-    "build": "tsdown"
+    "build": "bun run --bun tsdown"
   },
   "devDependencies": {
+    "@little-nebulae/tsdown-config": "workspace:*",
     "@little-nebulae/typescript-config": "workspace:*",
     "@types/bun": "catalog:",
     "@types/node": "catalog:",
+    "tsdown": "catalog:",
     "typescript": "catalog:"
   }
 }
