@@ -11,9 +11,11 @@
   "rules": {
     "sort-keys": "off",
     "id-length": "off",
+    "func-style": ["error", "declaration"],
     "import/no-named-export": "off",
     "import/prefer-default-export": "off",
     "import/group-exports": "off",
+    "import/exports-last": "off",
     "typescript/explicit-member-accessibility": "off",
     "typescript/prefer-readonly-parameter-types": "off"
   }
