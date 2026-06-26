@@ -1,9 +1,0 @@
-{
-  "extends": "@little-nebulae/typescript-config/base.json",
-  "compilerOptions": {
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
-  "include": ["src/**/*", "tsdown.config.ts"]
-}
