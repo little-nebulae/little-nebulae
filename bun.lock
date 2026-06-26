@@ -49,8 +49,6 @@
       "version": "1.0.0",
       "devDependencies": {
         "@little-nebulae/typescript-config": "workspace:*",
-        "@types/bun": "catalog:",
-        "@types/node": "catalog:",
         "tsdown": "catalog:",
         "typescript": "catalog:",
       },
