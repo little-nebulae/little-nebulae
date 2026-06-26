@@ -4,9 +4,7 @@
   "private": false,
   "type": "module",
   "scripts": {
-    "build": "tsdown",
-    "lint": "oxlint --config=./oxlint.config.ts",
-    "lint:fix": "oxlint --fix --config=./oxlint.config.ts"
+    "build": "tsdown"
   },
   "devDependencies": {
     "@little-nebulae/typescript-config": "workspace:*",
