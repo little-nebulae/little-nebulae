@@ -1,6 +1,9 @@
-import { createErrorSchema } from "@/factories";
+import type { z } from "zod";
 
-export const UnexpectedErrorSchema = createErrorSchema({
+import { createAppErrorSchema } from "@/factories";
+
+export const UnexpectedErrorSchema = createAppErrorSchema({
   code: "UNEXPECTED_ERROR",
   retryable: false,
 });
+export type UnexpectedError = z.infer<typeof UnexpectedErrorSchema>;
