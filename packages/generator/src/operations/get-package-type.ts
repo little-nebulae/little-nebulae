@@ -1,3 +1,4 @@
+// oxlint-disable typescript/explicit-module-boundary-types
 import { multiselect } from "@clack/prompts";
 
 export async function getPackageType() {
