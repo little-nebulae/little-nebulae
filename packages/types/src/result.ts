@@ -1,15 +1,31 @@
-import type { Context } from "@/context";
+import type { BaseError, Exception } from "@little-nebulae/exception";
 
-export interface Ok<D, C extends boolean = true> {
+export interface Context {
+  id: string;
+  operation: string;
+  status: "succeeded" | "failed" | "aborted";
+  input: unknown;
+  output: unknown;
+  exceptions: Exception[];
+  performance?: {
+    start: number;
+    end: number;
+    duration: number;
+  };
+}
+
+export interface Ok<D, EnableContext extends boolean = true> {
   ok: true;
   data: D;
-  context: C extends true ? Context : null;
+  context: EnableContext extends true ? Context : null;
 }
 
-export interface Err<E extends Error, C extends boolean = true> {
+export interface Err<E extends BaseError<string>, EnableContext extends boolean = true> {
   ok: false;
   error: E;
-  context: C extends true ? Context : null;
+  context: EnableContext extends true ? Context : null;
 }
 
-export type Result<D, E extends Error, C extends boolean = true> = Ok<D, C> | Err<E, C>;
+export type Result<D, E extends BaseError<string>, EnableContext extends boolean = true> =
+  | Ok<D, EnableContext>
+  | Err<E, EnableContext>;
