@@ -24,7 +24,6 @@
       "name": "@little-nebulae/fs",
       "version": "0.0.1",
       "devDependencies": {
-        "@little-nebulae/error": "workspace:*",
         "@little-nebulae/tsdown-config": "workspace:*",
         "@little-nebulae/typescript-config": "workspace:*",
         "@types/bun": "catalog:",

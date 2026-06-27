@@ -4,7 +4,6 @@
   "private": false,
   "type": "module",
   "devDependencies": {
-    "@little-nebulae/error": "workspace:*",
     "@little-nebulae/tsdown-config": "workspace:*",
     "@little-nebulae/typescript-config": "workspace:*",
     "@types/bun": "catalog:",
