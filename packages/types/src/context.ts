@@ -11,7 +11,7 @@ export interface Context {
     output: unknown;
     exceptions: Exception[];
   };
-  performance: {
+  performance?: {
     start: number;
     end: number;
     duration: number;
