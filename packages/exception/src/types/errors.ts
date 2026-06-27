@@ -1,9 +1,9 @@
-export interface AppError<C extends string> {
+export interface BaseError<C extends string> {
   code: C;
   message: string;
   retryable: boolean;
 }
 
-export interface UnexpectedError extends AppError<"UNEXPECTED_ERROR"> {
+export interface UnexpectedError extends BaseError<"UNEXPECTED_ERROR"> {
   retryable: false;
 }

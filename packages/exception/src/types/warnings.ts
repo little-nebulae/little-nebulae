@@ -1,4 +1,4 @@
-export interface Warning<C extends string> {
+export interface BaseWarning<C extends string> {
   code: C;
   message: string;
 }
