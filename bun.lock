@@ -10,8 +10,8 @@
         "oxlint-tsgolint": "0.23.0",
       },
     },
-    "packages/error": {
-      "name": "@little-nebulae/error",
+    "packages/exception": {
+      "name": "@little-nebulae/exception",
       "version": "0.0.0",
       "devDependencies": {
         "@little-nebulae/tsdown-config": "workspace:*",
@@ -133,7 +133,7 @@
 
     "@jridgewell/trace-mapping": ["@jridgewell/trace-mapping@0.3.31", "", { "dependencies": { "@jridgewell/resolve-uri": "^3.1.0", "@jridgewell/sourcemap-codec": "^1.4.14" } }, "sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw=="],
 
-    "@little-nebulae/error": ["@little-nebulae/error@workspace:packages/error"],
+    "@little-nebulae/exception": ["@little-nebulae/exception@workspace:packages/exception"],
 
     "@little-nebulae/fs": ["@little-nebulae/fs@workspace:packages/fs"],
 

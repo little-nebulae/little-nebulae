@@ -1,5 +1,5 @@
 {
-  "name": "@little-nebulae/error",
+  "name": "@little-nebulae/exception",
   "version": "0.0.0",
   "private": false,
   "type": "module",
