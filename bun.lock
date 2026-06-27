@@ -63,6 +63,16 @@
         "tsdown": "^0.22.0",
       },
     },
+    "packages/types": {
+      "name": "@little-nebulae/types",
+      "version": "0.0.1",
+      "devDependencies": {
+        "@little-nebulae/tsdown-config": "workspace:*",
+        "@little-nebulae/typescript-config": "workspace:*",
+        "tsdown": "catalog:",
+        "typescript": "catalog:",
+      },
+    },
     "packages/typescript-config": {
       "name": "@little-nebulae/typescript-config",
       "version": "1.0.0",
@@ -125,6 +135,8 @@
     "@little-nebulae/oxlint-config": ["@little-nebulae/oxlint-config@workspace:packages/oxlint-config"],
 
     "@little-nebulae/tsdown-config": ["@little-nebulae/tsdown-config@workspace:packages/tsdown-config"],
+
+    "@little-nebulae/types": ["@little-nebulae/types@workspace:packages/types"],
 
     "@little-nebulae/typescript-config": ["@little-nebulae/typescript-config@workspace:packages/typescript-config"],
 
