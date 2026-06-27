@@ -1,5 +1,5 @@
 {
-  "extends": "@little-nebulae/typescript-config/base.json",
+  "extends": "@little-nebulae/typescript-config/bun.json",
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"]
