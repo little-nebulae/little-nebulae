@@ -1,5 +1,5 @@
-export interface AppError<Code extends string> {
-  code: Code;
+export interface AppError<C extends string> {
+  code: C;
   message: string;
   retryable: boolean;
 }
