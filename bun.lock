@@ -71,8 +71,10 @@
     "packages/types": {
       "name": "@little-nebulae/types",
       "version": "0.0.1",
-      "devDependencies": {
+      "dependencies": {
         "@little-nebulae/exception": "workspace:*",
+      },
+      "devDependencies": {
         "@little-nebulae/tsdown-config": "workspace:*",
         "@little-nebulae/typescript-config": "workspace:*",
         "@types/bun": "catalog:",

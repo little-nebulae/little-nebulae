@@ -10,8 +10,10 @@
   "scripts": {
     "build": "bun run --bun tsdown"
   },
+  "dependencies": {
+    "@little-nebulae/exception": "workspace:*"
+  },
   "devDependencies": {
-    "@little-nebulae/exception": "workspace:*",
     "@little-nebulae/tsdown-config": "workspace:*",
     "@little-nebulae/typescript-config": "workspace:*",
     "@types/bun": "catalog:",
