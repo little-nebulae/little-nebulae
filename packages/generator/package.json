@@ -3,6 +3,12 @@
   "version": "0.0.1",
   "private": false,
   "type": "module",
+  "scripts": {
+    "start": "bun run src/index.ts"
+  },
+  "dependencies": {
+    "@clack/prompts": "catalog:"
+  },
   "devDependencies": {
     "@little-nebulae/typescript-config": "workspace:*",
     "@types/bun": "catalog:",
