@@ -1,4 +1,0 @@
-{
-  "extends": "@little-nebulae/typescript-config/base.json",
-  "include": ["index.d.ts"]
-}
