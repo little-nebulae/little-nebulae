@@ -28,6 +28,19 @@
         "typescript": "catalog:",
       },
     },
+    "packages/fs": {
+      "name": "@little-nebulae/fs",
+      "version": "0.0.1",
+      "devDependencies": {
+        "@little-nebulae/error": "workspace:*",
+        "@little-nebulae/tsdown-config": "workspace:*",
+        "@little-nebulae/typescript-config": "workspace:*",
+        "@types/bun": "catalog:",
+        "@types/node": "catalog:",
+        "tsdown": "catalog:",
+        "typescript": "catalog:",
+      },
+    },
     "packages/generator": {
       "name": "@little-nebulae/generator",
       "version": "0.0.1",
@@ -132,6 +145,8 @@
     "@little-nebulae/branded-type": ["@little-nebulae/branded-type@workspace:packages/branded-type"],
 
     "@little-nebulae/error": ["@little-nebulae/error@workspace:packages/error"],
+
+    "@little-nebulae/fs": ["@little-nebulae/fs@workspace:packages/fs"],
 
     "@little-nebulae/generator": ["@little-nebulae/generator@workspace:packages/generator"],
 
