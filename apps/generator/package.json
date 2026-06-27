@@ -1,0 +1,12 @@
+{
+  "name": "@little-nebulae/generator",
+  "version": "0.0.1",
+  "private": false,
+  "type": "module",
+  "devDependencies": {
+    "@little-nebulae/typescript-config": "workspace:*",
+    "@types/bun": "catalog:",
+    "@types/node": "catalog:",
+    "typescript": "catalog:"
+  }
+}
