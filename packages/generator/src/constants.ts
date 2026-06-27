@@ -1,7 +1,6 @@
-export const PACKAGE_TYPE = {
+export const PACKAGE_TYPE = Object.freeze({
   WEB_APP: "WEB_APP",
   API_SERVER: "API_SERVER",
-  INTERNAL_PACKAGE: "INTERNAL_PACKAGE",
-  PUBLIC_LIBRARY: "PUBLIC_LIBRARY",
+  LIBRARY: "LIBRARY",
   CLI_TOOL: "CLI_TOOL",
-} as const;
+});
