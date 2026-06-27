@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@little-nebulae/tsdown-config": "workspace:*",
+    "@little-nebulae/types": "workspace:*",
     "@little-nebulae/typescript-config": "workspace:*",
     "tsdown": "catalog:",
     "typescript": "catalog:"
