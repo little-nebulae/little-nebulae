@@ -1,4 +1,4 @@
-import type { UnexpectedError } from "@/types";
+import type { UnexpectedError } from "@/types/errors";
 
 export function createUnexpectedError(action: string): UnexpectedError {
   return {
