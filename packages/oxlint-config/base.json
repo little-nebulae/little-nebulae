@@ -27,6 +27,7 @@
     "oxc/no-async-await": "off",
     "typescript/explicit-member-accessibility": "off",
     "typescript/prefer-readonly-parameter-types": "off",
-    "typescript/explicit-function-return-type": "off"
+    "typescript/explicit-function-return-type": "off",
+    "unicorn/no-null": "off"
   }
 }
