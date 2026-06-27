@@ -1,1 +1,2 @@
-export type * from "@/data";
+export type * from "@/branded";
+export type * from "@/result";
