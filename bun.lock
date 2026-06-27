@@ -67,6 +67,16 @@
       "name": "@little-nebulae/typescript-config",
       "version": "1.0.0",
     },
+    "packages/utils": {
+      "name": "@little-nebulae/utils",
+      "version": "0.0.1",
+      "devDependencies": {
+        "@little-nebulae/tsdown-config": "workspace:*",
+        "@little-nebulae/typescript-config": "workspace:*",
+        "tsdown": "catalog:",
+        "typescript": "catalog:",
+      },
+    },
   },
   "catalog": {
     "@clack/prompts": "1.6.0",
@@ -117,6 +127,8 @@
     "@little-nebulae/tsdown-config": ["@little-nebulae/tsdown-config@workspace:packages/tsdown-config"],
 
     "@little-nebulae/typescript-config": ["@little-nebulae/typescript-config@workspace:packages/typescript-config"],
+
+    "@little-nebulae/utils": ["@little-nebulae/utils@workspace:packages/utils"],
 
     "@napi-rs/wasm-runtime": ["@napi-rs/wasm-runtime@1.1.5", "", { "dependencies": { "@tybys/wasm-util": "^0.10.2" }, "peerDependencies": { "@emnapi/core": "^1.7.1", "@emnapi/runtime": "^1.7.1" } }, "sha512-AWPoBRJ9tsnVhor4sjO7rkni+7p+2IAEFj6cx06UgP10jkQHqay/36uRV/bFkgrh18D9vb4cr8Q0Pthskgzy+Q=="],
 
