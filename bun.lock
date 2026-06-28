@@ -13,7 +13,7 @@
     },
     "packages/exception": {
       "name": "@little-nebulae/exception",
-      "version": "0.0.2",
+      "version": "0.0.3",
       "devDependencies": {
         "@little-nebulae/tsdown-config": "workspace:*",
         "@little-nebulae/typescript-config": "workspace:*",
@@ -70,6 +70,22 @@
       },
       "peerDependencies": {
         "oxlint": "^1.0.0",
+      },
+    },
+    "packages/package-management": {
+      "name": "@little-nebulae/package-management",
+      "version": "0.0.0",
+      "devDependencies": {
+        "@little-nebulae/tsdown-config": "workspace:*",
+        "@little-nebulae/typescript-config": "workspace:*",
+        "@types/bun": "catalog:",
+        "@types/node": "catalog:",
+        "tsdown": "catalog:",
+        "typescript": "catalog:",
+        "zod": "catalog:",
+      },
+      "peerDependencies": {
+        "zod": "^4.0.0",
       },
     },
     "packages/tsdown-config": {
@@ -162,6 +178,8 @@
     "@little-nebulae/json": ["@little-nebulae/json@workspace:packages/json"],
 
     "@little-nebulae/oxlint-config": ["@little-nebulae/oxlint-config@workspace:packages/oxlint-config"],
+
+    "@little-nebulae/package-management": ["@little-nebulae/package-management@workspace:packages/package-management"],
 
     "@little-nebulae/tsdown-config": ["@little-nebulae/tsdown-config@workspace:packages/tsdown-config"],
 
@@ -396,5 +414,7 @@
     "unconfig-core": ["unconfig-core@7.5.0", "", { "dependencies": { "@quansync/fs": "^1.0.0", "quansync": "^1.0.0" } }, "sha512-Su3FauozOGP44ZmKdHy2oE6LPjk51M/TRRjHv2HNCWiDvfvCoxC2lno6jevMA91MYAdCdwP05QnWdWpSbncX/w=="],
 
     "undici-types": ["undici-types@8.3.0", "", {}, "sha512-j375ScV60dom+YkPFIfTLcOiPxkN/buHz5GobjLhixFuANaNs3C9l4GmrWqejgXWJ7BbJcFYpTEUkS1Ge8bpZQ=="],
+
+    "zod": ["zod@4.4.3", "", {}, "sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ=="],
   }
 }
