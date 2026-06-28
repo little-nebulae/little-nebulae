@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "private": false,
   "type": "module",
+  "scripts": {
+    "build": "bun run --bun tsdown"
+  },
   "dependencies": {
     "@little-nebulae/exception": "workspace:*",
     "@little-nebulae/types": "workspace:*"
