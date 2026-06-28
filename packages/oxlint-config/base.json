@@ -23,12 +23,14 @@
     "import/exports-last": "off",
     "import/no-default-export": "off",
     "import/unambiguous": "off",
+    "import/no-nodejs-modules": "off",
     "no-duplicate-imports": ["error", { "allowSeparateTypeImports": true }],
     "oxc/no-rest-spread-properties": "off",
     "oxc/no-async-await": "off",
     "typescript/explicit-member-accessibility": "off",
     "typescript/prefer-readonly-parameter-types": "off",
     "typescript/explicit-function-return-type": "off",
-    "unicorn/no-null": "off"
+    "unicorn/no-null": "off",
+    "unicorn/import-style": "off"
   }
 }

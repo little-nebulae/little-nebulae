@@ -2,6 +2,7 @@ import type { UnexpectedError } from "@little-nebulae/exception";
 import type { Result } from "@little-nebulae/types";
 
 import { createUnexpectedError } from "@little-nebulae/exception";
+import { resolve } from "node:path";
 
 import type { NoEntryError } from "@/errors/no-entry";
 
@@ -18,6 +19,7 @@ export async function readTextFile(
       data: text,
     };
   } catch (error) {
+    const absolutePath = resolve(path);
     if (error instanceof Error && "errno" in error) {
       // oxlint-disable-next-line typescript/no-unsafe-type-assertion
       const errnoException = error as ErrnoException;
@@ -25,9 +27,9 @@ export async function readTextFile(
         return {
           ok: false,
           error: createNoEntryError({
-            message: `The file at ${path} does not exist.`,
+            message: `The file at ${absolutePath} does not exist.`,
             cause: errnoException,
-            path,
+            path: absolutePath,
           }),
         };
       }
@@ -35,7 +37,7 @@ export async function readTextFile(
     return {
       ok: false,
       error: createUnexpectedError({
-        action: `read the text content of a file at ${path}`,
+        action: `read the text content of a file at ${absolutePath}`,
         cause: error,
       }),
     };
