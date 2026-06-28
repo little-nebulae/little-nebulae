@@ -1,5 +1,5 @@
 {
-  "name": "@little-nebulae/package-management",
+  "name": "@little-nebulae/pkg",
   "version": "0.0.0",
   "private": false,
   "type": "module",

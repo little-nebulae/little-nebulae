@@ -72,8 +72,8 @@
         "oxlint": "^1.0.0",
       },
     },
-    "packages/package-management": {
-      "name": "@little-nebulae/package-management",
+    "packages/pkg": {
+      "name": "@little-nebulae/pkg",
       "version": "0.0.0",
       "devDependencies": {
         "@little-nebulae/tsdown-config": "workspace:*",
@@ -179,7 +179,7 @@
 
     "@little-nebulae/oxlint-config": ["@little-nebulae/oxlint-config@workspace:packages/oxlint-config"],
 
-    "@little-nebulae/package-management": ["@little-nebulae/package-management@workspace:packages/package-management"],
+    "@little-nebulae/pkg": ["@little-nebulae/pkg@workspace:packages/pkg"],
 
     "@little-nebulae/tsdown-config": ["@little-nebulae/tsdown-config@workspace:packages/tsdown-config"],
 
