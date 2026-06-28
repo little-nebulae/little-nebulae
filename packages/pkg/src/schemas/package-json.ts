@@ -19,3 +19,21 @@ export type PackageJson = z.infer<typeof PackageJsonSchema>;
 
 export const BunCatalogSchema = DependenciesSchema;
 export const BunCatalogsSchema = z.record(z.string(), DependenciesSchema);
+export const BunPackageJsonSchema = z
+  .object({
+    ...PackageJsonSchema.shape,
+    catalog: BunCatalogSchema,
+    catalogs: BunCatalogsSchema,
+    workspaces: z.union([
+      WorkspacesSchema,
+      z
+        .object({
+          packages: WorkspacesSchema,
+          catalog: BunCatalogSchema,
+          catalogs: BunCatalogsSchema,
+        })
+        .partial(),
+    ]),
+  })
+  .partial();
+export type BunPackageJson = z.infer<typeof BunPackageJsonSchema>;
