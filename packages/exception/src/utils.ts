@@ -1,10 +1,14 @@
 import type { UnexpectedError, UnserializableError } from "@/types/errors";
 
-export function createUnexpectedError(action: string): UnexpectedError {
+export function createUnexpectedError({
+  action,
+  cause,
+}: { action: string } & Pick<UnexpectedError, "cause">): UnexpectedError {
   return {
     code: "UNEXPECTED_ERROR",
     message: `An unexpected error was caught while trying to ${action}.`,
     retryable: false,
+    cause,
   };
 }
 
