@@ -23,6 +23,7 @@
     "import/exports-last": "off",
     "import/no-default-export": "off",
     "import/unambiguous": "off",
+    "no-duplicate-imports": ["error", { "allowSeparateTypeImports": true }],
     "oxc/no-rest-spread-properties": "off",
     "oxc/no-async-await": "off",
     "typescript/explicit-member-accessibility": "off",
