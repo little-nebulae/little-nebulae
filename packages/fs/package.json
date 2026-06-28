@@ -3,6 +3,13 @@
   "version": "0.0.1",
   "private": false,
   "type": "module",
+  "scripts": {
+    "try": "bun run src/try.ts"
+  },
+  "dependencies": {
+    "@little-nebulae/exception": "workspace:*",
+    "@little-nebulae/types": "workspace:*"
+  },
   "devDependencies": {
     "@little-nebulae/tsdown-config": "workspace:*",
     "@little-nebulae/typescript-config": "workspace:*",
