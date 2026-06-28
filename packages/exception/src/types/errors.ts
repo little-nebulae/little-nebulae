@@ -8,3 +8,8 @@ export interface BaseError<C extends string> {
 export interface UnexpectedError extends BaseError<"UNEXPECTED_ERROR"> {
   retryable: false;
 }
+
+export interface UnserializableError extends BaseError<"UNSERIALIZABLE_ERROR"> {
+  format: "JSON" | "YAML";
+  retryable: false;
+}
