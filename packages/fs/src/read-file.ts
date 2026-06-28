@@ -4,9 +4,9 @@ import type { Result } from "@little-nebulae/types";
 import { createUnexpectedError } from "@little-nebulae/exception";
 import { resolve } from "node:path";
 
-import type { NoEntryError } from "@/errors/no-entry";
+import type { NoEntryError } from "@/errors/types";
 
-import { createNoEntryError } from "@/errors/no-entry";
+import { createNoEntryError } from "@/errors/utils";
 
 export async function readTextFile(
   path: string,

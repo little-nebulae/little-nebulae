@@ -1,11 +1,6 @@
-import type { BaseError } from "@little-nebulae/exception";
 import type { OmitKnownKeys } from "@little-nebulae/types";
 
-export interface NoEntryError extends BaseError<"NO_ENTRY_ERROR"> {
-  retryable: false;
-  cause: ErrnoException;
-  path: string;
-}
+import type { NoEntryError } from "@/errors/types";
 
 export function createNoEntryError({
   message,
