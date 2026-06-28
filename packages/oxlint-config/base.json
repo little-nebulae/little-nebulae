@@ -17,6 +17,8 @@
     "sort-imports": "off",
     "no-underscore-dangle": "off",
     "no-console": "off",
+    "max-statements": "off",
+    "max-lines-per-function": "off",
     "import/no-named-export": "off",
     "import/prefer-default-export": "off",
     "import/group-exports": "off",
