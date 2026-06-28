@@ -13,7 +13,7 @@
     },
     "packages/exception": {
       "name": "@little-nebulae/exception",
-      "version": "0.0.0",
+      "version": "0.0.2",
       "devDependencies": {
         "@little-nebulae/tsdown-config": "workspace:*",
         "@little-nebulae/typescript-config": "workspace:*",
@@ -46,6 +46,18 @@
         "typescript": "catalog:",
       },
     },
+    "packages/json": {
+      "name": "@little-nebulae/json",
+      "version": "0.0.1",
+      "devDependencies": {
+        "@little-nebulae/tsdown-config": "workspace:*",
+        "@little-nebulae/typescript-config": "workspace:*",
+        "@types/bun": "catalog:",
+        "@types/node": "catalog:",
+        "tsdown": "catalog:",
+        "typescript": "catalog:",
+      },
+    },
     "packages/oxlint-config": {
       "name": "@little-nebulae/oxlint-config",
       "version": "0.0.0",
@@ -70,7 +82,7 @@
     },
     "packages/types": {
       "name": "@little-nebulae/types",
-      "version": "0.0.1",
+      "version": "0.0.2",
       "dependencies": {
         "@little-nebulae/exception": "workspace:*",
       },
@@ -142,6 +154,8 @@
     "@little-nebulae/fs": ["@little-nebulae/fs@workspace:packages/fs"],
 
     "@little-nebulae/generator": ["@little-nebulae/generator@workspace:packages/generator"],
+
+    "@little-nebulae/json": ["@little-nebulae/json@workspace:packages/json"],
 
     "@little-nebulae/oxlint-config": ["@little-nebulae/oxlint-config@workspace:packages/oxlint-config"],
 

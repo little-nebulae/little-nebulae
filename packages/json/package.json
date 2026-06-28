@@ -1,0 +1,14 @@
+{
+  "name": "@little-nebulae/json",
+  "version": "0.0.1",
+  "private": false,
+  "type": "module",
+  "devDependencies": {
+    "@little-nebulae/tsdown-config": "workspace:*",
+    "@little-nebulae/typescript-config": "workspace:*",
+    "@types/bun": "catalog:",
+    "@types/node": "catalog:",
+    "tsdown": "catalog:",
+    "typescript": "catalog:"
+  }
+}
