@@ -28,7 +28,7 @@ export async function readTextFile(
           ok: false,
           error: {
             code: "NO_ENTRY_ERROR",
-            message: `No file exists at ${absolutePath}.`,
+            message: `Failed to read file at ${absolutePath} because it doesn't exist.`,
             retryable: false,
             cause: exception,
             path: absolutePath,
