@@ -7,3 +7,9 @@ export interface NoEntryError extends BaseError<typeof FS_ERRORS.NO_ENTRY.code> 
   cause: ErrnoException;
   path: string;
 }
+
+export interface BusyError extends BaseError<typeof FS_ERRORS.BUSY.code> {
+  retryable: false;
+  cause: ErrnoException;
+  path: string;
+}
