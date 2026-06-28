@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "private": false,
   "type": "module",
+  "dependencies": {
+    "@little-nebulae/exception": "workspace:*",
+    "@little-nebulae/types": "workspace:*"
+  },
   "devDependencies": {
     "@little-nebulae/tsdown-config": "workspace:*",
     "@little-nebulae/typescript-config": "workspace:*",
