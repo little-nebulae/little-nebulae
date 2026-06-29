@@ -1,5 +1,4 @@
 import type { Result } from "@little-nebulae/types";
-import type { MakeDirectoryOptions } from "node:fs";
 
 import { UnexpectedError } from "@little-nebulae/exception";
 import { mkdir } from "node:fs/promises";
@@ -8,20 +7,17 @@ import { resolve, dirname } from "node:path";
 import { FsNoEntryError } from "@/lib/exception/classes/error";
 import { FS_ERRNO_CODES } from "@/lib/exception/constants";
 
-export async function makeDir(
-  path: string,
-  options: { recursive: true; mode?: string | number },
-): Promise<Result<string, UnexpectedError>>;
-export async function makeDir(
-  path: string,
-  options?: { recursive?: false; mode?: string | number },
-): Promise<Result<null, UnexpectedError>>;
-export async function makeDir(
-  path: string,
-  options: MakeDirectoryOptions = {},
-): Promise<Result<string | null, FsNoEntryError | UnexpectedError>> {
+export async function makeDir({
+  path,
+  recursive,
+  mode,
+}: {
+  path: string;
+  recursive?: boolean;
+  mode?: string | number;
+}): Promise<Result<string | null, FsNoEntryError | UnexpectedError>> {
   try {
-    const createdDirPath = await mkdir(path, options);
+    const createdDirPath = await mkdir(path, { recursive, mode });
     return {
       ok: true,
       data: createdDirPath ?? null,
