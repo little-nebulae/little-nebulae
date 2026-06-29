@@ -1,7 +1,6 @@
-import type { UnserializableError } from "@little-nebulae/exception";
 import type { Ok, Result } from "@little-nebulae/types";
 
-import { createUnserializableError } from "@little-nebulae/exception";
+import { UnserializableError } from "@little-nebulae/exception";
 
 import type { Jsonifiable } from "@/types";
 
@@ -21,7 +20,7 @@ export function jsonStringify(
   } catch (error) {
     return {
       ok: false,
-      error: createUnserializableError({ format: "JSON", cause: error }),
+      error: new UnserializableError({ format: "JSON", cause: error }),
     };
   }
 }
