@@ -16,3 +16,13 @@ export abstract class FsError<Code extends keyof typeof FS_ERRNO_CODES> extends 
     this.path = path;
   }
 }
+
+export class FsBusyError extends FsError<"FS_BUSY_ERROR"> {
+  readonly name = "FsBusyError";
+  readonly code = "FS_BUSY_ERROR";
+}
+
+export class FsNoEntryError extends FsError<"FS_NO_ENTRY_ERROR"> {
+  readonly name = "FsNoEntryError";
+  readonly code = "FS_NO_ENTRY_ERROR";
+}
