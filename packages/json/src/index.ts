@@ -1,4 +1,4 @@
 export type * from "@/types";
 
 export * from "@/constants";
-export * from "@/json-stringify";
+export * from "@/ops/stringify";
