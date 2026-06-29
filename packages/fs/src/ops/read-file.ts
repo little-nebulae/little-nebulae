@@ -6,9 +6,11 @@ import { resolve } from "node:path";
 import { FsNoEntryError } from "@/lib/exception/classes/error";
 import { FS_ERRNO_CODES } from "@/lib/exception/constants";
 
-export async function readTextFile(
-  path: string,
-): Promise<Result<string, FsNoEntryError | UnexpectedError>> {
+export async function readTextFile({
+  path,
+}: {
+  path: string;
+}): Promise<Result<string, FsNoEntryError | UnexpectedError>> {
   try {
     const file = Bun.file(path);
     const text = await file.text();
