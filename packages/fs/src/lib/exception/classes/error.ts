@@ -1,8 +1,8 @@
 import { BaseError } from "@little-nebulae/exception";
 
-import type { FileSystemErrorCode } from "@/lib/exception/constants";
+import type { FS_ERRNO_CODES } from "@/lib/exception/constants";
 
-export abstract class FileSystemError<Code extends FileSystemErrorCode> extends BaseError<
+export abstract class FsError<Code extends keyof typeof FS_ERRNO_CODES> extends BaseError<
   Code,
   ErrnoException
 > {
