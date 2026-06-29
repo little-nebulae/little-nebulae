@@ -1,3 +1,7 @@
+import type { ErrorObject } from "serialize-error";
+
+import { serializeError } from "serialize-error";
+
 export interface AppError<Code extends string> extends Error {
   code: Code;
 }
@@ -13,6 +17,17 @@ export abstract class BaseError<Code extends string, Cause = unknown>
 
   constructor({ message, cause }: { message: string; cause: Cause }) {
     super(message, { cause });
+  }
+
+  serialize(mode: "shallow" | "deep" = "shallow"): ErrorObject {
+    if (mode === "shallow") {
+      return {
+        name: this.name,
+        message: this.message,
+        code: this.code,
+      };
+    }
+    return serializeError(this, { maxDepth: 10 });
   }
 }
 

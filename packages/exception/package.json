@@ -10,6 +10,9 @@
   "scripts": {
     "build": "bun run --bun tsdown"
   },
+  "dependencies": {
+    "serialize-error": "13.0.1"
+  },
   "devDependencies": {
     "@little-nebulae/tsdown-config": "workspace:*",
     "@little-nebulae/typescript-config": "workspace:*",
