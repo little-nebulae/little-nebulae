@@ -22,6 +22,11 @@ export class FsBusyError extends FsError<"FS_BUSY_ERROR"> {
   readonly code = "FS_BUSY_ERROR";
 }
 
+export class FsExistError extends FsError<"FS_EXIST_ERROR"> {
+  readonly name = "FsExistError";
+  readonly code = "FS_EXIST_ERROR";
+}
+
 export class FsNoEntryError extends FsError<"FS_NO_ENTRY_ERROR"> {
   readonly name = "FsNoEntryError";
   readonly code = "FS_NO_ENTRY_ERROR";
