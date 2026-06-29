@@ -6,7 +6,15 @@ import { mkdir } from "node:fs/promises";
 
 export async function makeDir(
   path: string,
-  options: MakeDirectoryOptions,
+  options: { recursive: true; mode?: string | number },
+): Promise<Result<string, UnexpectedError>>;
+export async function makeDir(
+  path: string,
+  options?: { recursive?: false; mode?: string | number },
+): Promise<Result<null, UnexpectedError>>;
+export async function makeDir(
+  path: string,
+  options: MakeDirectoryOptions = {},
 ): Promise<Result<string | null, UnexpectedError>> {
   try {
     const createdDirPath = await mkdir(path, options);
