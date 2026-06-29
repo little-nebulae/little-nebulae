@@ -4,7 +4,7 @@ import type { MakeDirectoryOptions } from "node:fs";
 import { UnexpectedError } from "@little-nebulae/exception";
 import { mkdir } from "node:fs/promises";
 
-export async function makeTempDir(
+export async function makeDir(
   path: string,
   options: MakeDirectoryOptions,
 ): Promise<Result<string | null, UnexpectedError>> {
