@@ -27,3 +27,14 @@ export class UnexpectedError extends BaseError<"UNEXPECTED_ERROR"> {
     });
   }
 }
+
+export class UnserializableError extends BaseError<"UNSERIALIZABLE_ERROR"> {
+  readonly name = "UnserializableError";
+  readonly code = "UNSERIALIZABLE_ERROR";
+  readonly format: "JSON" | "YAML";
+
+  constructor({ format, cause }: { format: "JSON" | "YAML"; cause: unknown }) {
+    super({ message: `The given value cannot be serialized to ${format}.`, cause });
+    this.format = format;
+  }
+}
