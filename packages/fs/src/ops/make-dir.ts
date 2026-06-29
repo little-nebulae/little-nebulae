@@ -4,7 +4,7 @@ import { UnexpectedError } from "@little-nebulae/exception";
 import { mkdir } from "node:fs/promises";
 import { resolve, dirname } from "node:path";
 
-import { FsNoEntryError } from "@/lib/exception/classes/error";
+import { FsExistError, FsNoEntryError } from "@/lib/exception/classes/error";
 import { FS_ERRNO_CODES } from "@/lib/exception/constants";
 
 export async function makeDir({
@@ -15,7 +15,7 @@ export async function makeDir({
   path: string;
   recursive?: boolean;
   mode?: string | number;
-}): Promise<Result<string | null, FsNoEntryError | UnexpectedError>> {
+}): Promise<Result<string | null, FsExistError | FsNoEntryError | UnexpectedError>> {
   try {
     const createdDirPath = await mkdir(path, { recursive, mode });
     return {
@@ -27,6 +27,16 @@ export async function makeDir({
     if (error instanceof Error && "errno" in error) {
       // oxlint-disable-next-line typescript/no-unsafe-type-assertion
       const exception = error as ErrnoException;
+      if (exception.code === FS_ERRNO_CODES.FS_EXIST_ERROR) {
+        return {
+          ok: false,
+          error: new FsExistError({
+            message: `Failed to make a directory at ${absolutePath} because it already exists.`,
+            cause: exception,
+            path: absolutePath,
+          }),
+        };
+      }
       if (exception.code === FS_ERRNO_CODES.FS_NO_ENTRY_ERROR) {
         return {
           ok: false,
