@@ -10,7 +10,7 @@ import { FS_ERRNO_CODES } from "@/lib/exception/constants";
 
 export async function remove(
   path: string,
-  options: RmOptions,
+  options: RmOptions = {},
 ): Promise<Result<null, FsBusyError | FsNoEntryError | UnexpectedError>> {
   try {
     await rm(path, options);
