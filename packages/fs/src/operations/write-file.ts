@@ -1,7 +1,6 @@
-import type { UnexpectedError } from "@little-nebulae/exception";
 import type { Result } from "@little-nebulae/types";
 
-import { createUnexpectedError } from "@little-nebulae/exception";
+import { UnexpectedError } from "@little-nebulae/exception";
 import { resolve } from "node:path";
 
 export async function writeTextFile({
@@ -20,7 +19,7 @@ export async function writeTextFile({
   } catch (error) {
     return {
       ok: false,
-      error: createUnexpectedError({
+      error: new UnexpectedError({
         action: `write a text file to ${resolve(path)}`,
         cause: error,
       }),
