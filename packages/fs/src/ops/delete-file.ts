@@ -6,9 +6,11 @@ import { resolve } from "node:path";
 import { FsBusyError, FsNoEntryError } from "@/lib/exception/classes/error";
 import { FS_ERRNO_CODES } from "@/lib/exception/constants";
 
-export async function deleteFile(
-  path: string,
-): Promise<Result<null, FsBusyError | FsNoEntryError | UnexpectedError>> {
+export async function deleteFile({
+  path,
+}: {
+  path: string;
+}): Promise<Result<null, FsBusyError | FsNoEntryError | UnexpectedError>> {
   try {
     await Bun.file(path).delete();
     return {
