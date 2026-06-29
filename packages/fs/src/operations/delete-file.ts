@@ -1,16 +1,14 @@
-import type { UnexpectedError } from "@little-nebulae/exception";
 import type { Result } from "@little-nebulae/types";
 
-import { createUnexpectedError } from "@little-nebulae/exception";
+import { UnexpectedError } from "@little-nebulae/exception";
 import { resolve } from "node:path";
 
-import type { BusyError, NoEntryError } from "@/lib/exception/errors";
-
-import { FS_ERRORS } from "@/lib/exception/constants";
+import { FsBusyError, FsNoEntryError } from "@/lib/exception/classes/error";
+import { FS_ERRNO_CODES } from "@/lib/exception/constants";
 
 export async function deleteFile(
   path: string,
-): Promise<Result<null, BusyError | NoEntryError | UnexpectedError>> {
+): Promise<Result<null, FsBusyError | FsNoEntryError | UnexpectedError>> {
   try {
     await Bun.file(path).delete();
     return {
@@ -22,35 +20,31 @@ export async function deleteFile(
     if (error instanceof Error && "errno" in error) {
       // oxlint-disable-next-line typescript/no-unsafe-type-assertion
       const exception = error as ErrnoException;
-      if (exception.code === FS_ERRORS.BUSY.errnoCode) {
+      if (exception.code === FS_ERRNO_CODES.FS_BUSY_ERROR) {
         return {
           ok: false,
-          error: {
-            code: "BUSY_ERROR",
-            message: `Failed to delete file at ${absolutePath} because it is being used by the system or another process.`,
-            retryable: false,
+          error: new FsBusyError({
+            message: `Failed to delete file at ${absolutePath} because it's being used by the system or another process.`,
             cause: exception,
             path: absolutePath,
-          },
+          }),
         };
       }
-      if (exception.code === FS_ERRORS.NO_ENTRY.errnoCode) {
+      if (exception.code === FS_ERRNO_CODES.FS_NO_ENTRY_ERROR) {
         return {
           ok: false,
-          error: {
-            code: "NO_ENTRY_ERROR",
+          error: new FsNoEntryError({
             message: `Failed to delete file at ${absolutePath} because it doesn't exist.`,
-            retryable: false,
             cause: exception,
             path: absolutePath,
-          },
+          }),
         };
       }
     }
     return {
       ok: false,
-      error: createUnexpectedError({
-        action: `read the text content of a file at ${absolutePath}`,
+      error: new UnexpectedError({
+        action: `delete file at ${absolutePath}`,
         cause: error,
       }),
     };
