@@ -12,6 +12,7 @@ export const BunLockfileWorkspacesSchema = z
 export const BunLockfileSchema = z.object({
   lockfileVersion: z.literal(SUPPORTED_BUN_LOCKFILE_VERSION),
   workspaces: BunLockfileWorkspacesSchema,
-  catalog: BunCatalogSchema,
-  catalogs: BunCatalogsSchema,
+  catalog: BunCatalogSchema.optional(),
+  catalogs: BunCatalogsSchema.optional(),
 });
+export type BunLockfile = z.infer<typeof BunLockfileSchema>;
