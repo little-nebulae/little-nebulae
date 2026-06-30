@@ -8,10 +8,12 @@ import { resolve } from "node:path";
 import { FsBusyError, FsNoEntryError } from "@/lib/exception/classes/error";
 import { FS_ERRNO_CODES } from "@/lib/exception/constants";
 
-export async function remove(
-  path: string,
-  options: RmOptions = {},
-): Promise<Result<null, FsBusyError | FsNoEntryError | UnexpectedError>> {
+export async function remove({
+  path,
+  ...options
+}: { path: string } & RmOptions): Promise<
+  Result<null, FsBusyError | FsNoEntryError | UnexpectedError>
+> {
   try {
     await rm(path, options);
     return {
