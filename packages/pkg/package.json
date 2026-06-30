@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "private": false,
   "type": "module",
+  "scripts": {
+    "try": "bun run src/try.ts"
+  },
   "dependencies": {
     "@little-nebulae/exception": "workspace:*",
     "@little-nebulae/fs": "workspace:*",
