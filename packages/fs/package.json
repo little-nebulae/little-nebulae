@@ -4,6 +4,7 @@
   "private": false,
   "type": "module",
   "scripts": {
+    "build": "bun run --bun tsdown",
     "try": "bun run src/try.ts"
   },
   "dependencies": {
