@@ -1,3 +1,4 @@
+import type { SchemaError } from "@standard-schema/utils";
 import type { ErrorObject } from "serialize-error";
 
 import { serializeError } from "serialize-error";
@@ -54,7 +55,25 @@ export class UnserializableError extends BaseError<"UNSERIALIZABLE_ERROR"> {
   }
 }
 
-export class ValidationError extends BaseError<"VALIDATION_ERROR"> {
+export class ValidationError extends BaseError<"VALIDATION_ERROR", SchemaError> {
   readonly name = "ValidationError";
   readonly code = "VALIDATION_ERROR";
+  readonly issues: SchemaError["issues"];
+
+  constructor({ message, cause }: { message?: string; cause: SchemaError }) {
+    super({ message: message ?? cause.message, cause });
+    this.issues = cause.issues;
+  }
+
+  override serialize(mode: "shallow" | "deep" = "shallow"): ErrorObject {
+    if (mode === "shallow") {
+      return {
+        name: this.name,
+        message: this.message,
+        code: this.code,
+        issues: this.issues,
+      };
+    }
+    return serializeError(this, { maxDepth: 10 });
+  }
 }

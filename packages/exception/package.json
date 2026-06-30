@@ -11,6 +11,7 @@
     "build": "bun run --bun tsdown"
   },
   "dependencies": {
+    "@standard-schema/utils": "0.3.0",
     "serialize-error": "13.0.1"
   },
   "devDependencies": {
