@@ -53,3 +53,8 @@ export class UnserializableError extends BaseError<"UNSERIALIZABLE_ERROR"> {
     this.format = format;
   }
 }
+
+export class ValidationError extends BaseError<"VALIDATION_ERROR"> {
+  readonly name = "ValidationError";
+  readonly code = "VALIDATION_ERROR";
+}
