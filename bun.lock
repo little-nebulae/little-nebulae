@@ -55,7 +55,7 @@
     },
     "packages/json": {
       "name": "@little-nebulae/json",
-      "version": "0.0.1",
+      "version": "0.0.2",
       "dependencies": {
         "@little-nebulae/exception": "workspace:*",
         "@little-nebulae/types": "workspace:*",
@@ -83,6 +83,12 @@
     "packages/pkg": {
       "name": "@little-nebulae/pkg",
       "version": "0.0.0",
+      "dependencies": {
+        "@little-nebulae/exception": "workspace:*",
+        "@little-nebulae/fs": "workspace:*",
+        "@little-nebulae/json": "workspace:*",
+        "@little-nebulae/types": "workspace:*",
+      },
       "devDependencies": {
         "@little-nebulae/tsdown-config": "workspace:*",
         "@little-nebulae/typescript-config": "workspace:*",
