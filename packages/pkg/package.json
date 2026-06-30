@@ -1,9 +1,14 @@
 {
   "name": "@little-nebulae/pkg",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": false,
   "type": "module",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
   "scripts": {
+    "build": "bun run --bun tsdown",
     "try": "bun run src/try.ts"
   },
   "dependencies": {
