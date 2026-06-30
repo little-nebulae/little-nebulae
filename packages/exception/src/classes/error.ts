@@ -1,6 +1,7 @@
 import type { SchemaError } from "@standard-schema/utils";
 import type { ErrorObject } from "serialize-error";
 
+import { getDotPath } from "@standard-schema/utils";
 import { serializeError } from "serialize-error";
 
 export interface AppError<Code extends string> extends Error {
@@ -65,13 +66,35 @@ export class ValidationError extends BaseError<"VALIDATION_ERROR", SchemaError> 
     this.issues = cause.issues;
   }
 
+  getFlatIssues(): {
+    formErrors: string[];
+    fieldErrors: Record<string, string[]>;
+  } {
+    const formErrors: string[] = [];
+    const fieldErrors: Record<string, string[]> = {};
+
+    for (const issue of this.issues) {
+      const dotPath = getDotPath(issue);
+      if (typeof dotPath === "string") {
+        if (fieldErrors[dotPath]) {
+          fieldErrors[dotPath].push(issue.message);
+        } else {
+          fieldErrors[dotPath] = [issue.message];
+        }
+      } else {
+        formErrors.push(issue.message);
+      }
+    }
+    return { formErrors, fieldErrors };
+  }
+
   override serialize(mode: "shallow" | "deep" = "shallow"): ErrorObject {
     if (mode === "shallow") {
       return {
         name: this.name,
         message: this.message,
         code: this.code,
-        issues: this.issues,
+        issues: this.getFlatIssues(),
       };
     }
     return serializeError(this, { maxDepth: 10 });
