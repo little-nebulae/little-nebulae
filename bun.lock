@@ -47,6 +47,12 @@
       "version": "0.0.1",
       "dependencies": {
         "@clack/prompts": "catalog:",
+        "@little-nebulae/exception": "workspace:*",
+        "@little-nebulae/fs": "workspace:*",
+        "@little-nebulae/json": "workspace:*",
+        "@little-nebulae/pkg": "workspace:*",
+        "@little-nebulae/types": "workspace:*",
+        "zod": "catalog:",
       },
       "devDependencies": {
         "@little-nebulae/typescript-config": "workspace:*",
@@ -84,7 +90,7 @@
     },
     "packages/pkg": {
       "name": "@little-nebulae/pkg",
-      "version": "0.0.0",
+      "version": "0.0.1",
       "dependencies": {
         "@little-nebulae/exception": "workspace:*",
         "@little-nebulae/fs": "workspace:*",

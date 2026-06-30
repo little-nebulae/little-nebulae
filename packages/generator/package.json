@@ -7,7 +7,13 @@
     "start": "bun run src/index.ts"
   },
   "dependencies": {
-    "@clack/prompts": "catalog:"
+    "@clack/prompts": "catalog:",
+    "@little-nebulae/exception": "workspace:*",
+    "@little-nebulae/fs": "workspace:*",
+    "@little-nebulae/json": "workspace:*",
+    "@little-nebulae/pkg": "workspace:*",
+    "@little-nebulae/types": "workspace:*",
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@little-nebulae/typescript-config": "workspace:*",
