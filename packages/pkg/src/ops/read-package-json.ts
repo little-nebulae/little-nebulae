@@ -1,11 +1,22 @@
+import type { UnexpectedError } from "@little-nebulae/exception";
+import type { FsNoEntryError } from "@little-nebulae/fs";
+import type { Result } from "@little-nebulae/types";
+
+import { ValidationError } from "@little-nebulae/exception";
 import { readTextFile } from "@little-nebulae/fs";
 import { parse } from "@little-nebulae/json";
 import { join } from "node:path";
 import { cwd } from "node:process";
 
+import type { BunPackageJson } from "@/schemas/package-json";
+
 import { BunPackageJsonSchema } from "@/schemas/package-json";
 
-export async function readPackageJson({ rootDir = cwd() }: { rootDir?: string }) {
+export async function readPackageJson({
+  rootDir = cwd(),
+}: {
+  rootDir?: string;
+}): Promise<Result<BunPackageJson, FsNoEntryError | ValidationError | UnexpectedError>> {
   const path = join(rootDir, "package.json");
 
   const readFileResult = await readTextFile({ path });
@@ -16,8 +27,17 @@ export async function readPackageJson({ rootDir = cwd() }: { rootDir?: string })
 
   const parseResult = BunPackageJsonSchema.safeParse(parse(fileContent));
   if (!parseResult.success) {
-    return null;
+    return {
+      ok: false,
+      error: new ValidationError({
+        cause: parseResult.error,
+      }),
+    };
   }
   const packageJson = parseResult.data;
-  return packageJson;
+
+  return {
+    ok: true,
+    data: packageJson,
+  };
 }
