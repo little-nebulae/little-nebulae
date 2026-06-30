@@ -23,6 +23,8 @@
     "require-unicode-regexp": "off",
     "no-undefined": "off",
     "prefer-destructuring": "off",
+    "default-case": "off",
+    "no-fallthrough": "off",
     "import/no-named-export": "off",
     "import/prefer-default-export": "off",
     "import/group-exports": "off",

@@ -9,3 +9,5 @@ export const PACKAGE_TYPE = Object.freeze({
   LIBRARY: "LIBRARY",
   CLI_TOOL: "CLI_TOOL",
 });
+
+export const ERROR_EXIT_CODE = 1;
