@@ -4,9 +4,13 @@ import type { ErrorObject } from "serialize-error";
 import { getDotPath } from "@standard-schema/utils";
 import { serializeError } from "serialize-error";
 
-export interface AppError<Code extends string> extends Error {
-  code: Code;
-}
+import type {
+  AppError,
+  FlatError,
+  FlatIssues,
+  FlatValidationError,
+  ValidationErrorCode,
+} from "@/types";
 
 export abstract class BaseError<Code extends string, Cause = unknown>
   extends Error
@@ -21,7 +25,9 @@ export abstract class BaseError<Code extends string, Cause = unknown>
     super(message, { cause });
   }
 
-  serialize(mode: "shallow" | "deep" = "shallow"): ErrorObject {
+  serialize(mode?: "shallow"): FlatError<Code>;
+  serialize(mode: "deep"): ErrorObject;
+  serialize(mode: "shallow" | "deep" = "shallow"): FlatError<Code> | ErrorObject {
     if (mode === "shallow") {
       return {
         name: this.name,
@@ -56,7 +62,7 @@ export class UnserializableError extends BaseError<"UNSERIALIZABLE_ERROR"> {
   }
 }
 
-export class ValidationError extends BaseError<"VALIDATION_ERROR", SchemaError> {
+export class ValidationError extends BaseError<ValidationErrorCode, SchemaError> {
   readonly name = "ValidationError";
   readonly code = "VALIDATION_ERROR";
   readonly issues: SchemaError["issues"];
@@ -66,12 +72,9 @@ export class ValidationError extends BaseError<"VALIDATION_ERROR", SchemaError> 
     this.issues = cause.issues;
   }
 
-  getFlatIssues(): {
-    formErrors: string[];
-    fieldErrors: Record<string, string[]>;
-  } {
-    const formErrors: string[] = [];
-    const fieldErrors: Record<string, string[]> = {};
+  getFlatIssues(): FlatIssues {
+    const formErrors: FlatIssues["formErrors"] = [];
+    const fieldErrors: FlatIssues["fieldErrors"] = {};
 
     for (const issue of this.issues) {
       const dotPath = getDotPath(issue);
@@ -88,7 +91,9 @@ export class ValidationError extends BaseError<"VALIDATION_ERROR", SchemaError> 
     return { formErrors, fieldErrors };
   }
 
-  override serialize(mode: "shallow" | "deep" = "shallow"): ErrorObject {
+  override serialize(mode?: "shallow"): FlatValidationError;
+  override serialize(mode: "deep"): ErrorObject;
+  override serialize(mode: "shallow" | "deep" = "shallow"): FlatValidationError | ErrorObject {
     if (mode === "shallow") {
       return {
         name: this.name,
