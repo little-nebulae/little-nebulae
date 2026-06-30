@@ -26,6 +26,6 @@ if (!readPackageJsonResult.ok) {
   }
 }
 
-const packageJson = readPackageJsonResult.data;
+const _packageJson = readPackageJsonResult.data;
 
 outro("Good bye. See you again!");
