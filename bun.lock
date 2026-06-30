@@ -24,10 +24,6 @@
         "@little-nebulae/typescript-config": "workspace:*",
         "tsdown": "catalog:",
         "typescript": "catalog:",
-        "zod": "catalog:",
-      },
-      "peerDependencies": {
-        "zod": "^4.0.0",
       },
     },
     "packages/fs": {
