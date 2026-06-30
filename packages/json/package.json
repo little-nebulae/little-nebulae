@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "@little-nebulae/exception": "workspace:*",
-    "@little-nebulae/types": "workspace:*"
+    "@little-nebulae/types": "workspace:*",
+    "jsonc-parser": "3.3.1"
   },
   "devDependencies": {
     "@little-nebulae/tsdown-config": "workspace:*",

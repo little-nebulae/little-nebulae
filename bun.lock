@@ -13,7 +13,7 @@
     },
     "packages/exception": {
       "name": "@little-nebulae/exception",
-      "version": "0.0.3",
+      "version": "0.0.4",
       "dependencies": {
         "serialize-error": "13.0.1",
       },
@@ -59,6 +59,7 @@
       "dependencies": {
         "@little-nebulae/exception": "workspace:*",
         "@little-nebulae/types": "workspace:*",
+        "jsonc-parser": "3.3.1",
       },
       "devDependencies": {
         "@little-nebulae/tsdown-config": "workspace:*",
@@ -377,6 +378,8 @@
     "import-without-cache": ["import-without-cache@0.4.0", "", {}, "sha512-NkJQA7oZ4YHQhd2+H3BoRFKF3d/XNsiKpHZCQEMH9pDX27hQQLsTyOocyRgaIVtf8gHX3Nt3LPkR4e5EdtPAGQ=="],
 
     "jsesc": ["jsesc@3.1.0", "", { "bin": { "jsesc": "bin/jsesc" } }, "sha512-/sM3dO2FOzXjKQhJuo0Q173wf2KOo8t4I8vHy6lF9poUp7bKT0/NHE8fPX23PwfhnykfqnC2xRxOnVw5XuGIaA=="],
+
+    "jsonc-parser": ["jsonc-parser@3.3.1", "", {}, "sha512-HUgH65KyejrUFPvHFPbqOY0rsFip3Bo5wb4ngvdi1EpCYWUQDC5V+Y7mZws+DLkr4M//zQJoanu1SP+87Dv1oQ=="],
 
     "non-error": ["non-error@0.1.0", "", {}, "sha512-TMB1uHiGsHRGv1uYclfhivcnf0/PdFp2pNqRxXjncaAsjYMoisaQJI+SSZCqRq+VliwRTC8tsMQfmrWjDMhkPQ=="],
 
