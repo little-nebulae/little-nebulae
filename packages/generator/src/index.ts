@@ -7,7 +7,6 @@ import { ERROR_EXIT_CODE } from "@/constants";
 intro("Welcome to Little Nebula's code generator!");
 
 const readPackageJsonResult = await readPackageJson({});
-
 if (!readPackageJsonResult.ok) {
   const error = readPackageJsonResult.error;
   switch (error.code) {
@@ -25,7 +24,10 @@ if (!readPackageJsonResult.ok) {
     }
   }
 }
-
-const _packageJson = readPackageJsonResult.data;
+const packageJson = readPackageJsonResult.data;
+if (packageJson.workspaces === undefined) {
+  cancel("Single-package workspace is currently unsupported.");
+  exit(ERROR_EXIT_CODE);
+}
 
 outro("Good bye. See you again!");
