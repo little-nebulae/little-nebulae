@@ -1,10 +1,10 @@
 import { z } from "zod";
 
-export const DependenciesSchema = z.record(z.string(), z.string());
-export type Dependencies = z.infer<typeof DependenciesSchema>;
+export const DependencyRecordSchema = z.record(z.string(), z.string());
+export type DependencyRecord = z.infer<typeof DependencyRecordSchema>;
 
-export const WorkspacesSchema = z.array(z.string());
-export type Workspaces = z.infer<typeof WorkspacesSchema>;
+export const WorkspaceListSchema = z.array(z.string());
+export type WorkspaceList = z.infer<typeof WorkspaceListSchema>;
 
 export const PackageJsonSchema = z
   .object({
@@ -12,11 +12,11 @@ export const PackageJsonSchema = z
     version: z.string(),
     private: z.union([z.boolean(), z.literal("true"), z.literal("false")]),
     type: z.union([z.literal("module"), z.literal("commonjs")]),
-    workspaces: WorkspacesSchema,
+    workspaces: WorkspaceListSchema,
     scripts: z.record(z.string(), z.string()),
-    dependencies: DependenciesSchema,
-    devDependencies: DependenciesSchema,
-    peerDependencies: DependenciesSchema,
+    dependencies: DependencyRecordSchema,
+    devDependencies: DependencyRecordSchema,
+    peerDependencies: DependencyRecordSchema,
   })
   .partial();
 export type PackageJson = z.infer<typeof PackageJsonSchema>;

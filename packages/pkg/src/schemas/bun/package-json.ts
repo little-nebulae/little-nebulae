@@ -1,20 +1,24 @@
 import { z } from "zod";
 
-import { DependenciesSchema, WorkspacesSchema, PackageJsonSchema } from "@/schemas/package-json";
+import {
+  DependencyRecordSchema,
+  WorkspaceListSchema,
+  PackageJsonSchema,
+} from "@/schemas/package-json";
 
-export const BunCatalogSchema = DependenciesSchema;
+export const BunCatalogSchema = DependencyRecordSchema;
 export type BunCatalog = z.infer<typeof BunCatalogSchema>;
 
-export const BunCatalogsSchema = z.record(z.string(), DependenciesSchema);
-export type BunCatalogs = z.infer<typeof BunCatalogsSchema>;
+export const BunCatalogRecordSchema = z.record(z.string(), DependencyRecordSchema);
+export type BunCatalogRecord = z.infer<typeof BunCatalogRecordSchema>;
 
 export const BunWorkspacesSchema = z.union([
-  WorkspacesSchema,
+  WorkspaceListSchema,
   z
     .object({
-      packages: WorkspacesSchema,
+      packages: WorkspaceListSchema,
       catalog: BunCatalogSchema,
-      catalogs: BunCatalogsSchema,
+      catalogs: BunCatalogRecordSchema,
     })
     .partial(),
 ]);
@@ -24,7 +28,7 @@ export const BunPackageJsonSchema = z
   .object({
     ...PackageJsonSchema.shape,
     catalog: BunCatalogSchema,
-    catalogs: BunCatalogsSchema,
+    catalogs: BunCatalogRecordSchema,
     workspaces: BunWorkspacesSchema,
   })
   .partial();
