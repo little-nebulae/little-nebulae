@@ -1,7 +1,8 @@
 import { z } from "zod";
 
 import { SUPPORTED_BUN_LOCKFILE_VERSION } from "@/constants";
-import { BunCatalogSchema, BunCatalogsSchema, PackageJsonSchema } from "@/schemas/package-json";
+import { BunCatalogSchema, BunCatalogsSchema } from "@/schemas/bun/package-json";
+import { PackageJsonSchema } from "@/schemas/package-json";
 
 export const BunLockfileWorkspacesSchema = z
   .object({
