@@ -8,9 +8,9 @@ import { parse } from "@little-nebulae/json";
 import { join } from "node:path";
 import { cwd } from "node:process";
 
-import type { BunPackageJson } from "@/schemas/package-json";
+import type { BunPackageJson } from "@/schemas/bun/package-json";
 
-import { BunPackageJsonSchema } from "@/schemas/package-json";
+import { BunPackageJsonSchema } from "@/schemas/bun/package-json";
 
 export async function readPackageJson({
   rootDir = cwd(),
