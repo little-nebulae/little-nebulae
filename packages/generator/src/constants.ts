@@ -1,13 +1,13 @@
 export const WORKSPACE_TYPE = Object.freeze({
-  "SINGLE-PACKAGE": "SINGLE-PACKAGE",
-  "MULTI-PACKAGE": "MULTI-PACKAGE",
+  "SINGLE-PACKAGE": "single-package",
+  "MULTI-PACKAGE": "multi-package",
 });
 
 export const PACKAGE_TYPE = Object.freeze({
-  WEB_APP: "WEB_APP",
-  API_SERVER: "API_SERVER",
-  LIBRARY: "LIBRARY",
-  CLI_TOOL: "CLI_TOOL",
+  LIBRARY: "library",
+  WEB_APP: "web-app",
+  CLI_TOOL: "cli-tool",
+  API_SERVER: "api-server",
 });
 
 export const ERROR_EXIT_CODE = 1;
