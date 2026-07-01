@@ -18,7 +18,9 @@ export const PackageJsonSchema = z
 export type PackageJson = z.infer<typeof PackageJsonSchema>;
 
 export const BunCatalogSchema = DependenciesSchema;
+export type BunCatalog = z.infer<typeof BunCatalogSchema>;
 export const BunCatalogsSchema = z.record(z.string(), DependenciesSchema);
+export type BunCatalogs = z.infer<typeof BunCatalogsSchema>;
 export const BunPackageJsonSchema = z
   .object({
     ...PackageJsonSchema.shape,
