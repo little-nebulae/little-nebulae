@@ -13,6 +13,7 @@
     "@little-nebulae/json": "workspace:*",
     "@little-nebulae/pkg": "workspace:*",
     "@little-nebulae/types": "workspace:*",
+    "@little-nebulae/utils": "workspace:*",
     "zod": "catalog:"
   },
   "devDependencies": {
