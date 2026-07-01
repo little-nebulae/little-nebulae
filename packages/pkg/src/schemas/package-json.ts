@@ -1,7 +1,11 @@
 import { z } from "zod";
 
 export const DependenciesSchema = z.record(z.string(), z.string());
+export type Dependencies = z.infer<typeof DependenciesSchema>;
+
 export const WorkspacesSchema = z.array(z.string());
+export type Workspaces = z.infer<typeof WorkspacesSchema>;
+
 export const PackageJsonSchema = z
   .object({
     name: z.string(),
