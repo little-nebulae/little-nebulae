@@ -8,9 +8,9 @@ import { parse } from "@little-nebulae/json";
 import { join } from "node:path";
 import { cwd } from "node:process";
 
-import type { BunLockfile } from "@/schemas/bun-lockfile";
+import type { BunLockfile } from "@/schemas/bun/lockfile";
 
-import { BunLockfileSchema } from "@/schemas/bun-lockfile";
+import { BunLockfileSchema } from "@/schemas/bun/lockfile";
 
 export async function readBunLockfile({
   rootDir = cwd(),
